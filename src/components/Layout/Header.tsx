@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Activity, Menu, X } from 'lucide-react';
+import { Activity, Menu, X, Globe } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('it');
   const location = useLocation();
 
   const navigation = [
@@ -12,6 +13,10 @@ const Header: React.FC = () => {
     { name: 'Chi Siamo', href: '/about', current: location.pathname === '/about' },
     { name: 'Docs', href: '/docs', current: location.pathname === '/docs' },
   ];
+
+  const toggleLanguage = () => {
+    setCurrentLanguage(prev => prev === 'it' ? 'en' : 'it');
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200/50 shadow-sm">
@@ -22,9 +27,14 @@ const Header: React.FC = () => {
             <div className="p-2 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
               <Activity className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-              MedAgent
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                MEDAGENTbyTREBLA
+              </span>
+              <span className="text-xs text-gray-500">
+                Powered by bolt.new
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -44,8 +54,17 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Language Switch & CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* Language Switch */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200"
+            >
+              <Globe className="h-4 w-4" />
+              <span className="uppercase">{currentLanguage}</span>
+            </button>
+
             <Link
               to="/valutazione"
               className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
@@ -81,6 +100,16 @@ const Header: React.FC = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Mobile Language Switch */}
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center space-x-2 px-4 py-3 rounded-lg text-base font-medium text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200"
+              >
+                <Globe className="h-4 w-4" />
+                <span>Language: {currentLanguage.toUpperCase()}</span>
+              </button>
+
               <Link
                 to="/valutazione"
                 className="mx-4 mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-xl text-center"

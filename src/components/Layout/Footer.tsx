@@ -15,7 +15,10 @@ const Footer: React.FC = () => {
               <div className="p-2 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl">
                 <Activity className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold">MedAgent</span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold">MEDAGENTbyTREBLA</span>
+                <span className="text-sm text-gray-400">Powered by bolt.new</span>
+              </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Un assistente sanitario AI che ti guida attraverso valutazioni sintomatiche intelligenti, 
@@ -77,7 +80,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center space-x-3">
               <Mail className="h-5 w-5 text-blue-400" />
-              <span className="text-gray-300">support@medagent.ai</span>
+              <span className="text-gray-300">support@medagentbytrebla.ai</span>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="h-5 w-5 text-green-400" />
@@ -93,12 +96,12 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} MedAgent. Tutti i diritti riservati.
+            © {currentYear} MEDAGENTbyTREBLA. Tutti i diritti riservati.
           </p>
           <div className="mt-4 md:mt-0">
             <p className="text-gray-400 text-sm">
               <strong className="text-yellow-400">⚠️ IMPORTANTE:</strong> 
-              MedAgent non sostituisce il parere medico professionale.
+              MEDAGENTbyTREBLA non sostituisce il parere medico professionale.
             </p>
           </div>
         </div>

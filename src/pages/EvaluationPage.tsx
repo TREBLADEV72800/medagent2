@@ -6,7 +6,6 @@ import Layout from '../components/Layout/Layout';
 import Card from '../components/UI/Card';
 import Button from '../components/UI/Button';
 import { EvaluationFormData, SYMPTOM_OPTIONS, MEDICAL_CONDITIONS } from '../types';
-import { profileAPI } from '../services/api';
 import { useSession } from '../hooks/useLocalStorage';
 
 const EvaluationPage: React.FC = () => {
@@ -48,8 +47,10 @@ const EvaluationPage: React.FC = () => {
     setLoading(true);
     try {
       if (sessionId) {
-        await profileAPI.createProfile(sessionId, data);
+        // Invece di chiamare l'API, salviamo direttamente nel localStorage
         setUserProfile(data);
+        // Simula un piccolo delay per l'UX
+        await new Promise(resolve => setTimeout(resolve, 1000));
         navigate('/chat');
       }
     } catch (error) {
@@ -334,7 +335,7 @@ const EvaluationPage: React.FC = () => {
               Importante Disclaimer Medico
             </h3>
             <p className="text-yellow-700 text-sm leading-relaxed">
-              MedAgent è uno strumento di supporto educativo e NON sostituisce il parere medico professionale. 
+              MEDAGENTbyTREBLA è uno strumento di supporto educativo e NON sostituisce il parere medico professionale. 
               Per emergenze mediche contatta immediatamente il 118. Le informazioni fornite non costituiscono 
               diagnosi medica e non devono essere utilizzate come sostituto di una consultazione medica qualificata.
             </p>
@@ -353,7 +354,7 @@ const EvaluationPage: React.FC = () => {
           <div className="flex-1">
             <span className="font-medium text-gray-900">Consenso Informato *</span>
             <p className="text-sm text-gray-600 mt-1">
-              Comprendo che MedAgent è un assistente AI per scopi educativi e di orientamento. 
+              Comprendo che MEDAGENTbyTREBLA è un assistente AI per scopi educativi e di orientamento. 
               Accetto che non costituisce parere medico professionale e che per problemi di salute 
               devo consultare un medico qualificato.
             </p>

@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
     {
       name: 'Dr. Maria Rossi',
       role: 'Medico di Base, Milano',
-      content: 'MedAgent aiuta i miei pazienti a comprendere meglio i loro sintomi prima della visita, rendendo le consultazioni più efficaci.',
+      content: 'MEDAGENTbyTREBLA aiuta i miei pazienti a comprendere meglio i loro sintomi prima della visita, rendendo le consultazioni più efficaci.',
       rating: 5
     },
     {
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
     {
       name: 'Prof. Laura Verdi',
       role: 'Università Statale',
-      content: 'Uso MedAgent per insegnare ai miei studenti di medicina come strutturare un approccio diagnostico centrato sul paziente.',
+      content: 'Uso MEDAGENTbyTREBLA per insegnare ai miei studenti di medicina come strutturare un approccio diagnostico centrato sul paziente.',
       rating: 5
     }
   ];
@@ -93,7 +93,7 @@ const HomePage: React.FC = () => {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              MedAgent ti guida attraverso <strong>valutazioni sintomatiche intelligenti</strong>, 
+              MEDAGENTbyTREBLA ti guida attraverso <strong>valutazioni sintomatiche intelligenti</strong>, 
               fornendo supporto empatico e orientamento medico responsabile con 
               <strong> IA conversazionale avanzata</strong>.
             </p>
@@ -137,6 +137,13 @@ const HomePage: React.FC = () => {
                 <span>AI Etica e Sicura</span>
               </div>
             </div>
+
+            {/* Powered by bolt.new */}
+            <div className="mt-8">
+              <p className="text-sm text-gray-400">
+                Powered by <span className="font-semibold text-blue-600">bolt.new</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -146,7 +153,7 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Perché Scegliere MedAgent
+              Perché Scegliere MEDAGENTbyTREBLA
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Un approccio rivoluzionario alla valutazione sintomatica che unisce intelligenza artificiale, 
@@ -181,7 +188,7 @@ const HomePage: React.FC = () => {
                 Tutto Quello Che Ti Serve
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                MedAgent non è solo un chatbot medico, ma un ecosistema completo 
+                MEDAGENTbyTREBLA non è solo un chatbot medico, ma un ecosistema completo 
                 per la gestione intelligente della tua salute digitale.
               </p>
               
@@ -211,7 +218,7 @@ const HomePage: React.FC = () => {
                   
                   <div className="bg-gray-50 rounded-lg p-4">
                     <p className="text-sm text-gray-700 mb-2">
-                      <strong>MedAgent:</strong> Ciao! Sono qui per aiutarti a comprendere meglio i tuoi sintomi. 
+                      <strong>MEDAGENTbyTREBLA:</strong> Ciao! Sono qui per aiutarti a comprendere meglio i tuoi sintomi. 
                       Puoi descrivermi come ti senti oggi?
                     </p>
                   </div>
@@ -224,7 +231,7 @@ const HomePage: React.FC = () => {
                   
                   <div className="bg-gray-50 rounded-lg p-4">
                     <p className="text-sm text-gray-700">
-                      <strong>MedAgent:</strong> Capisco la tua preoccupazione. Per aiutarti meglio, 
+                      <strong>MEDAGENTbyTREBLA:</strong> Capisco la tua preoccupazione. Per aiutarti meglio, 
                       puoi dirmi l'intensità del mal di testa da 1 a 10?
                     </p>
                   </div>
@@ -243,7 +250,7 @@ const HomePage: React.FC = () => {
               Cosa Dicono i Professionisti
             </h2>
             <p className="text-xl text-gray-600">
-              MedAgent è già utilizzato da medici, educatori e famiglie in tutta Italia.
+              MEDAGENTbyTREBLA è già utilizzato da medici, educatori e famiglie in tutta Italia.
             </p>
           </div>
 
@@ -279,7 +286,7 @@ const HomePage: React.FC = () => {
             Pronto a Prenderti Cura della Tua Salute?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Inizia subito la tua prima valutazione gratuita con MedAgent. 
+            Inizia subito la tua prima valutazione gratuita con MEDAGENTbyTREBLA. 
             Nessuna registrazione richiesta, massima privacy garantita.
           </p>
           
