@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Activity, Menu, X, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
   const navigation = [
-    { name: 'Home', href: '/', current: location.pathname === '/' },
-    { name: 'Assessment', href: '/valutazione', current: location.pathname === '/valutazione' },
-    { name: 'About Us', href: '/about', current: location.pathname === '/about' },
-    { name: 'Docs', href: '/docs', current: location.pathname === '/docs' },
+    { name: t('nav.home'), href: '/', current: location.pathname === '/' },
+    { name: t('nav.assessment'), href: '/valutazione', current: location.pathname === '/valutazione' },
+    { name: t('nav.about'), href: '/about', current: location.pathname === '/about' },
+    { name: t('nav.docs'), href: '/docs', current: location.pathname === '/docs' },
   ];
 
   const toggleLanguage = () => {
-    setCurrentLanguage(prev => prev === 'en' ? 'it' : 'en');
+    const newLang = i18n.language === 'en' ? 'it' : 'en';
+    i18n.changeLanguage(newLang);
   };
 
   return (
@@ -32,7 +34,7 @@ const Header: React.FC = () => {
                 MEDAGENTbyTREBLA
               </span>
               <span className="text-xs text-gray-500">
-                Powered by bolt.new
+                {t('common.powered_by')}
               </span>
             </div>
           </Link>
@@ -60,16 +62,17 @@ const Header: React.FC = () => {
             <button
               onClick={toggleLanguage}
               className="flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200"
+              aria-label={`${t('nav.language')}: ${i18n.language.toUpperCase()}`}
             >
               <Globe className="h-4 w-4" />
-              <span className="uppercase">{currentLanguage}</span>
+              <span className="uppercase">{i18n.language}</span>
             </button>
 
             <Link
               to="/valutazione"
               className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Start Assessment
+              {t('buttons.start_assessment')}
             </Link>
           </div>
 
@@ -77,6 +80,7 @@ const Header: React.FC = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-lg text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-colors"
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -100,14 +104,14 @@ const Header: React.FC = () => {
                   {item.name}
                 </Link>
               ))}
-
+              
               {/* Mobile Language Switch */}
               <button
                 onClick={toggleLanguage}
                 className="flex items-center space-x-2 px-4 py-3 rounded-lg text-base font-medium text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200"
               >
                 <Globe className="h-4 w-4" />
-                <span>Language: {currentLanguage.toUpperCase()}</span>
+                <span>{t('nav.language')}: {i18n.language.toUpperCase()}</span>
               </button>
 
               <Link
@@ -115,7 +119,7 @@ const Header: React.FC = () => {
                 className="mx-4 mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-xl text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Start Assessment
+                {t('buttons.start_assessment')}
               </Link>
             </div>
           </div>

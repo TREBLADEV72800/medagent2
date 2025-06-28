@@ -1,64 +1,60 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Heart, Shield, Users, CheckCircle, Star } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Layout from '../components/Layout/Layout';
 import Card from '../components/UI/Card';
 import Button from '../components/UI/Button';
 
 const HomePage: React.FC = () => {
+  const { t } = useTranslation();
+
   const features = [
     {
       icon: Brain,
-      title: 'Intelligenza Adattiva',
-      description: 'AI conversazionale che si adatta al tuo profilo e sintomi specifici per un supporto personalizzato.',
+      title: t('home.features.adaptive_intelligence.title'),
+      description: t('home.features.adaptive_intelligence.description'),
       color: 'from-blue-500 to-purple-600'
     },
     {
       icon: Heart,
-      title: 'Approccio Empatico',
-      description: 'Interazioni umane e comprensive che non giudicano, ma guidano con sensibilità verso la soluzione.',
+      title: t('home.features.empathetic_approach.title'),
+      description: t('home.features.empathetic_approach.description'),
       color: 'from-red-500 to-pink-600'
     },
     {
       icon: Shield,
-      title: 'Privacy Garantita',
-      description: 'GDPR compliant con crittografia end-to-end. I tuoi dati sanitari sono protetti e mai condivisi.',
+      title: t('home.features.guaranteed_privacy.title'),
+      description: t('home.features.guaranteed_privacy.description'),
       color: 'from-green-500 to-teal-600'
     },
     {
       icon: Users,
-      title: 'Output Duale',
-      description: 'Risposte sia per te che per operatori sanitari, con linguaggio appropriato per ogni destinatario.',
+      title: t('home.features.dual_output.title'),
+      description: t('home.features.dual_output.description'),
       color: 'from-orange-500 to-yellow-600'
     }
   ];
 
-  const benefits = [
-    'Valutazione sintomi in tempo reale',
-    'Raccomandazioni personalizzate',
-    'Supporto multilingua',
-    'Interfaccia intuitiva e accessibile',
-    'Disclaimer medico trasparente',
-    'Cronologia consultazioni sicura'
-  ];
+  const benefits = t('home.benefits.list', { returnObjects: true }) as string[];
 
   const testimonials = [
     {
-      name: 'Dr. Maria Rossi',
-      role: 'Medico di Base, Milano',
-      content: 'MEDAGENTbyTREBLA aiuta i miei pazienti a comprendere meglio i loro sintomi prima della visita, rendendo le consultazioni più efficaci.',
+      name: t('home.testimonials.dr_maria.name'),
+      role: t('home.testimonials.dr_maria.role'),
+      content: t('home.testimonials.dr_maria.content'),
       rating: 5
     },
     {
-      name: 'Giuseppe Bianchi',
-      role: 'Genitore',
-      content: 'Finalmente un assistente che non mi fa entrare nel panico quando mio figlio ha qualche sintomo. Molto utile per orientarsi.',
+      name: t('home.testimonials.giuseppe.name'),
+      role: t('home.testimonials.giuseppe.role'),
+      content: t('home.testimonials.giuseppe.content'),
       rating: 5
     },
     {
-      name: 'Prof. Laura Verdi',
-      role: 'Università Statale',
-      content: 'Uso MEDAGENTbyTREBLA per insegnare ai miei studenti di medicina come strutturare un approccio diagnostico centrato sul paziente.',
+      name: t('home.testimonials.prof_laura.name'),
+      role: t('home.testimonials.prof_laura.role'),
+      content: t('home.testimonials.prof_laura.content'),
       rating: 5
     }
   ];
@@ -79,23 +75,13 @@ const HomePage: React.FC = () => {
             {/* Main Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
-                Un assistente digitale
-              </span>
-              <br />
-              <span className="text-gray-900">
-                per capire meglio
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                come stai
+                {t('home.hero.title')}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              MEDAGENTbyTREBLA ti guida attraverso <strong>valutazioni sintomatiche intelligenti</strong>, 
-              fornendo supporto empatico e orientamento medico responsabile con 
-              <strong> IA conversazionale avanzata</strong>.
+              {t('home.hero.subtitle')}
             </p>
 
             {/* CTA Buttons */}
@@ -108,7 +94,7 @@ const HomePage: React.FC = () => {
                 iconPosition="right"
                 className="min-w-64"
               >
-                Inizia la Valutazione Gratuita
+                {t('home.hero.cta_primary')}
               </Button>
               
               <Button 
@@ -118,7 +104,7 @@ const HomePage: React.FC = () => {
                 size="xl"
                 className="min-w-64"
               >
-                Scopri Come Funziona
+                {t('home.hero.cta_secondary')}
               </Button>
             </div>
 
@@ -130,18 +116,18 @@ const HomePage: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-5 w-5 text-blue-600" />
-                <span>Disclaimer Medico</span>
+                <span>Medical Disclaimer</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Heart className="h-5 w-5 text-red-600" />
-                <span>AI Etica e Sicura</span>
+                <span>Ethical & Safe AI</span>
               </div>
             </div>
 
             {/* Powered by bolt.new */}
             <div className="mt-8">
               <p className="text-sm text-gray-400">
-                Powered by <span className="font-semibold text-blue-600">bolt.new</span>
+                {t('common.powered_by')}
               </p>
             </div>
           </div>
@@ -153,11 +139,10 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Perché Scegliere MEDAGENTbyTREBLA
+              {t('home.features.title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Un approccio rivoluzionario alla valutazione sintomatica che unisce intelligenza artificiale, 
-              empatia umana e rigore scientifico.
+              {t('home.features.subtitle')}
             </p>
           </div>
 
@@ -185,11 +170,10 @@ const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Tutto Quello Che Ti Serve
+                {t('home.benefits.title')}
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                MEDAGENTbyTREBLA non è solo un chatbot medico, ma un ecosistema completo 
-                per la gestione intelligente della tua salute digitale.
+                {t('home.benefits.subtitle')}
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -203,7 +187,7 @@ const HomePage: React.FC = () => {
 
               <div className="mt-8">
                 <Button as={Link} to="/docs" variant="outline" size="lg">
-                  Esplora Tutte le Funzionalità
+                  Explore All Features
                 </Button>
               </div>
             </div>
@@ -213,26 +197,26 @@ const HomePage: React.FC = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-gray-600">Sessione Attiva</span>
+                    <span className="text-sm text-gray-600">Active Session</span>
                   </div>
                   
                   <div className="bg-gray-50 rounded-lg p-4">
                     <p className="text-sm text-gray-700 mb-2">
-                      <strong>MEDAGENTbyTREBLA:</strong> Ciao! Sono qui per aiutarti a comprendere meglio i tuoi sintomi. 
-                      Puoi descrivermi come ti senti oggi?
+                      <strong>MEDAGENTbyTREBLA:</strong> Hello! I'm here to help you better understand your symptoms. 
+                      Can you describe how you're feeling today?
                     </p>
                   </div>
                   
                   <div className="bg-blue-50 rounded-lg p-4 ml-8">
                     <p className="text-sm text-gray-700">
-                      <strong>Tu:</strong> Ho mal di testa da due giorni e un po' di febbre...
+                      <strong>You:</strong> I've had a headache for two days and some fever...
                     </p>
                   </div>
                   
                   <div className="bg-gray-50 rounded-lg p-4">
                     <p className="text-sm text-gray-700">
-                      <strong>MEDAGENTbyTREBLA:</strong> Capisco la tua preoccupazione. Per aiutarti meglio, 
-                      puoi dirmi l'intensità del mal di testa da 1 a 10?
+                      <strong>MEDAGENTbyTREBLA:</strong> I understand your concern. To help you better, 
+                      can you tell me the intensity of the headache from 1 to 10?
                     </p>
                   </div>
                 </div>
@@ -247,10 +231,10 @@ const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Cosa Dicono i Professionisti
+              {t('home.testimonials.title')}
             </h2>
             <p className="text-xl text-gray-600">
-              MEDAGENTbyTREBLA è già utilizzato da medici, educatori e famiglie in tutta Italia.
+              {t('home.testimonials.subtitle')}
             </p>
           </div>
 
@@ -283,11 +267,10 @@ const HomePage: React.FC = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Pronto a Prenderti Cura della Tua Salute?
+            {t('home.cta.title')}
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Inizia subito la tua prima valutazione gratuita con MEDAGENTbyTREBLA. 
-            Nessuna registrazione richiesta, massima privacy garantita.
+            {t('home.cta.subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -298,7 +281,7 @@ const HomePage: React.FC = () => {
               size="xl"
               className="bg-white text-blue-600 hover:bg-gray-50"
             >
-              Inizia Ora - È Gratuito
+              {t('home.cta.primary')}
             </Button>
             
             <Button 
@@ -308,7 +291,7 @@ const HomePage: React.FC = () => {
               size="xl"
               className="border-white text-white hover:bg-white hover:text-blue-600"
             >
-              Scopri di Più
+              {t('home.cta.secondary')}
             </Button>
           </div>
         </div>

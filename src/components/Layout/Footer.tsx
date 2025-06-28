@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -17,28 +19,27 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold">MEDAGENTbyTREBLA</span>
-                <span className="text-sm text-gray-400">Powered by bolt.new</span>
+                <span className="text-sm text-gray-400">{t('common.powered_by')}</span>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              An AI health assistant that guides you through intelligent symptom assessments, 
-              providing empathetic support and responsible medical guidance.
+              {t('footer.brand_description')}
             </p>
             <div className="flex items-center space-x-2 text-sm text-gray-400">
               <Heart className="h-4 w-4 text-red-400" />
-              <span>Made with passion for digital health</span>
+              <span>{t('footer.made_with_passion')}</span>
             </div>
           </div>
 
           {/* Navigation Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Navigation</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.navigation')}</h3>
             <ul className="space-y-3">
               {[
-                { name: 'Home', href: '/' },
-                { name: 'Assessment', href: '/valutazione' },
-                { name: 'About Us', href: '/about' },
-                { name: 'Documentation', href: '/docs' },
+                { name: t('nav.home'), href: '/' },
+                { name: t('nav.assessment'), href: '/valutazione' },
+                { name: t('nav.about'), href: '/about' },
+                { name: t('nav.docs'), href: '/docs' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
@@ -54,7 +55,7 @@ const Footer: React.FC = () => {
 
           {/* Legal Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.legal')}</h3>
             <ul className="space-y-3">
               {[
                 { name: 'Privacy Policy', href: '/privacy' },
@@ -96,12 +97,12 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} MEDAGENTbyTREBLA. All rights reserved.
+            © {currentYear} MEDAGENTbyTREBLA. {t('footer.all_rights_reserved')}
           </p>
           <div className="mt-4 md:mt-0">
             <p className="text-gray-400 text-sm">
               <strong className="text-yellow-400">⚠️ IMPORTANT:</strong> 
-              MEDAGENTbyTREBLA does not replace professional medical advice.
+              {' '}{t('footer.important_notice')}
             </p>
           </div>
         </div>

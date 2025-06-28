@@ -1,0 +1,297 @@
+{
+  "nav": {
+    "home": "Home",
+    "assessment": "Valutazione",
+    "about": "Chi Siamo",
+    "docs": "Documentazione",
+    "language": "Lingua"
+  },
+  "buttons": {
+    "start_assessment": "Inizia Valutazione",
+    "continue": "Continua",
+    "back": "Indietro",
+    "start_consultation": "Inizia Consultazione",
+    "export_results": "Esporta Risultati",
+    "share_results": "Condividi Risultati",
+    "new_evaluation": "Nuova Valutazione",
+    "back_to_chat": "Torna alla Chat"
+  },
+  "home": {
+    "hero": {
+      "title": "Un assistente digitale per capire meglio come stai",
+      "subtitle": "MEDAGENTbyTREBLA ti guida attraverso valutazioni sintomatiche intelligenti, fornendo supporto empatico e orientamento medico responsabile con IA conversazionale avanzata.",
+      "cta_primary": "Inizia la Valutazione Gratuita",
+      "cta_secondary": "Scopri Come Funziona"
+    },
+    "features": {
+      "title": "Perché Scegliere MEDAGENTbyTREBLA",
+      "subtitle": "Un approccio rivoluzionario alla valutazione sintomatica che unisce intelligenza artificiale, empatia umana e rigore scientifico.",
+      "adaptive_intelligence": {
+        "title": "Intelligenza Adattiva",
+        "description": "AI conversazionale che si adatta al tuo profilo e sintomi specifici per un supporto personalizzato."
+      },
+      "empathetic_approach": {
+        "title": "Approccio Empatico",
+        "description": "Interazioni umane e comprensive che non giudicano, ma guidano con sensibilità verso la soluzione."
+      },
+      "guaranteed_privacy": {
+        "title": "Privacy Garantita",
+        "description": "GDPR compliant con crittografia end-to-end. I tuoi dati sanitari sono protetti e mai condivisi."
+      },
+      "dual_output": {
+        "title": "Output Duale",
+        "description": "Risposte sia per te che per operatori sanitari, con linguaggio appropriato per ogni destinatario."
+      }
+    },
+    "benefits": {
+      "title": "Tutto Quello Che Ti Serve",
+      "subtitle": "MEDAGENTbyTREBLA non è solo un chatbot medico, ma un ecosistema completo per la gestione intelligente della tua salute digitale.",
+      "list": [
+        "Valutazione sintomi in tempo reale",
+        "Raccomandazioni personalizzate",
+        "Supporto multilingua",
+        "Interfaccia intuitiva e accessibile",
+        "Disclaimer medico trasparente",
+        "Cronologia consultazioni sicura"
+      ]
+    },
+    "testimonials": {
+      "title": "Cosa Dicono i Professionisti",
+      "subtitle": "MEDAGENTbyTREBLA è già utilizzato da medici, educatori e famiglie in tutta Italia.",
+      "dr_maria": {
+        "name": "Dr. Maria Rossi",
+        "role": "Medico di Base, Milano",
+        "content": "MEDAGENTbyTREBLA aiuta i miei pazienti a comprendere meglio i loro sintomi prima della visita, rendendo le consultazioni più efficaci."
+      },
+      "giuseppe": {
+        "name": "Giuseppe Bianchi",
+        "role": "Genitore",
+        "content": "Finalmente un assistente che non mi fa entrare nel panico quando mio figlio ha qualche sintomo. Molto utile per orientarsi."
+      },
+      "prof_laura": {
+        "name": "Prof. Laura Verdi",
+        "role": "Università Statale",
+        "content": "Uso MEDAGENTbyTREBLA per insegnare ai miei studenti di medicina come strutturare un approccio diagnostico centrato sul paziente."
+      }
+    },
+    "cta": {
+      "title": "Pronto a Prenderti Cura della Tua Salute?",
+      "subtitle": "Inizia subito la tua prima valutazione gratuita con MEDAGENTbyTREBLA. Nessuna registrazione richiesta, massima privacy garantita.",
+      "primary": "Inizia Ora - È Gratuito",
+      "secondary": "Scopri di Più"
+    }
+  },
+  "evaluation": {
+    "title": "Valutazione Sintomatica Guidata",
+    "subtitle": "Rispondi alle domande per ricevere un supporto personalizzato dal nostro assistente AI.",
+    "steps": {
+      "basic_info": {
+        "title": "Informazioni di Base",
+        "subtitle": "Iniziamo raccogliendo alcune informazioni di base per personalizzare la tua esperienza.",
+        "age_label": "Fascia d'Età *",
+        "age_placeholder": "Seleziona...",
+        "age_options": {
+          "under_12": "Meno di 12 anni",
+          "12_18": "12-18 anni",
+          "19_30": "19-30 anni",
+          "31_50": "31-50 anni",
+          "51_70": "51-70 anni",
+          "over_70": "Oltre 70 anni"
+        },
+        "gender_label": "Genere",
+        "gender_options": {
+          "male": "Maschio",
+          "female": "Femmina",
+          "other": "Altro",
+          "prefer_not_say": "Preferisco non dire"
+        }
+      },
+      "main_symptom": {
+        "title": "Sintomo Principale",
+        "subtitle": "Descrivi il sintomo che ti preoccupa di più o che ti ha portato qui.",
+        "symptom_label": "Qual è il tuo sintomo principale? *",
+        "symptom_placeholder": "es. mal di testa, febbre, dolore toracico...",
+        "duration_label": "Da quanto tempo? *",
+        "duration_options": {
+          "1_day": "Oggi (meno di 24 ore)",
+          "2_3_days": "2-3 giorni",
+          "more_3_days": "Più di 3 giorni",
+          "chronic": "Cronico (settimane/mesi)"
+        },
+        "intensity_label": "Intensità percepita: {intensity}/10",
+        "intensity_scale": {
+          "mild": "Lieve",
+          "moderate": "Moderata",
+          "severe": "Severa"
+        }
+      },
+      "associated_symptoms": {
+        "title": "Sintomi Associati",
+        "subtitle": "Seleziona tutti gli altri sintomi che stai sperimentando (opzionale)."
+      },
+      "medical_history": {
+        "title": "Anamnesi Medica",
+        "subtitle": "Queste informazioni ci aiutano a fornirti consigli più precisi e personalizzati.",
+        "conditions_label": "Condizioni mediche note (seleziona tutte quelle applicabili)",
+        "family_history_label": "Familiarità o predisposizioni ereditarie (opzionale)",
+        "family_history_placeholder": "es. diabete in famiglia, allergie, malattie cardiache..."
+      },
+      "consent": {
+        "title": "Consensi e Privacy",
+        "subtitle": "Prima di iniziare, leggi attentamente e accetta i seguenti consensi.",
+        "medical_disclaimer": {
+          "title": "Importante Disclaimer Medico",
+          "content": "MEDAGENTbyTREBLA è uno strumento di supporto educativo e NON sostituisce il parere medico professionale. Per emergenze mediche contatta immediatamente il 118. Le informazioni fornite non costituiscono diagnosi medica e non devono essere utilizzate come sostituto di una consultazione medica qualificata."
+        },
+        "informed_consent": {
+          "title": "Consenso Informato *",
+          "content": "Comprendo che MEDAGENTbyTREBLA è un assistente AI per scopi educativi e di orientamento. Accetto che non costituisce parere medico professionale e che per problemi di salute devo consultare un medico qualificato."
+        },
+        "privacy_consent": {
+          "title": "Privacy e Trattamento Dati *",
+          "content": "Accetto il trattamento dei miei dati secondo la Privacy Policy. I dati sono pseudonimizzati, crittografati e cancellati automaticamente dopo 30 giorni. Nessun dato personale identificativo è memorizzato."
+        }
+      }
+    },
+    "progress": {
+      "step": "Passaggio {current} di {total}",
+      "completed": "{percent}% completato"
+    },
+    "validation": {
+      "age_required": "Seleziona la tua fascia d'età",
+      "symptom_required": "Inserisci il sintomo principale",
+      "duration_required": "Seleziona la durata",
+      "consent_required": "Devi accettare il consenso informato",
+      "privacy_required": "Devi accettare la privacy policy"
+    }
+  },
+  "chat": {
+    "title": "Consultazione Medica",
+    "ai_name": "MedAgent",
+    "ai_subtitle": "Assistente Sanitario AI",
+    "status_online": "Online",
+    "profile_section": "Profilo Sessione",
+    "urgency_level": "Livello urgenza:",
+    "actions": {
+      "view_results": "Vedi Risultati",
+      "new_assessment": "Nuova Valutazione"
+    },
+    "input_placeholder": "Scrivi il tuo messaggio... (Ctrl+Invio per inviare)",
+    "disclaimer": "⚠️ Le risposte sono educative e non sostituiscono il parere medico professionale",
+    "suggestions": "Suggerimenti:"
+  },
+  "results": {
+    "title": "Risultati della Valutazione",
+    "subtitle": "Ecco il riassunto della tua consultazione con MedAgent",
+    "urgency_level": "Livello di Urgenza:",
+    "main_symptom": "Sintomo principale:",
+    "intensity": "Intensità:",
+    "duration": "Durata:",
+    "tabs": {
+      "for_you": "Per Te",
+      "for_professionals": "Per Operatori Sanitari"
+    },
+    "immediate_recommendations": "Raccomandazioni Immediate",
+    "followup_suggestions": "Suggerimenti per il Follow-up",
+    "statistics": {
+      "messages_exchanged": "Messaggi Scambiati",
+      "consultation_minutes": "Minuti di Consultazione",
+      "ai_model": "Gemini 2.0-flash"
+    },
+    "no_results": {
+      "title": "Nessun Risultato Disponibile",
+      "subtitle": "Devi completare una valutazione per vedere i risultati.",
+      "action": "Inizia Valutazione"
+    }
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "subtitle": "Siamo un team di medici, ingegneri e ricercatori che crede nel potere della tecnologia per democratizzare l'accesso all'orientamento sanitario.",
+    "mission": {
+      "title": "La Nostra Missione",
+      "content1": "In un mondo dove l'accesso alle cure mediche può essere complesso e costoso, MedAgent nasce per colmare il gap informativo tra cittadini e sistema sanitario.",
+      "content2": "Non sostituiamo i medici, ma li completiamo, offrendo strumenti di prima valutazione che aiutano le persone a comprendere quando e come cercare aiuto professionale.",
+      "content3": "La nostra visione è un futuro dove ogni persona, indipendentemente dal background socio-economico o dalla località geografica, ha accesso a orientamento sanitario intelligente, empatico e scientificamente fondato."
+    },
+    "values": {
+      "title": "I Nostri Valori",
+      "subtitle": "Ogni linea di codice che scriviamo è guidata da principi etici solidi e dalla convinzione che la tecnologia debba servire l'umanità.",
+      "digital_empathy": {
+        "title": "Empatia Digitale",
+        "description": "Creiamo tecnologia che comprende e rispetta le emozioni umane, offrendo supporto compassionevole in momenti di vulnerabilità."
+      },
+      "privacy_by_design": {
+        "title": "Privacy by Design",
+        "description": "La protezione dei dati sanitari è integrata in ogni aspetto del nostro sistema, non aggiunta come ripensamento."
+      },
+      "responsible_ai": {
+        "title": "AI Responsabile",
+        "description": "Utilizziamo l'intelligenza artificiale in modo etico, trasparente e sempre sotto supervisione umana qualificata."
+      },
+      "universal_accessibility": {
+        "title": "Accessibilità Universale",
+        "description": "Progettiamo per tutti: anziani, giovani, persone con disabilità, migranti, famiglie con diversi livelli di alfabetizzazione digitale."
+      }
+    },
+    "team": {
+      "title": "Il Nostro Team",
+      "subtitle": "Professionisti appassionati che uniscono expertise medica, competenze tecniche e visione etica."
+    },
+    "timeline": {
+      "title": "Il Nostro Percorso",
+      "subtitle": "Dalla ricerca iniziale al prodotto che usi oggi: una timeline del nostro sviluppo."
+    },
+    "technology": {
+      "title": "Tecnologia All'Avanguardia",
+      "content1": "MedAgent utilizza Gemini 2.0-flash, il modello linguistico più avanzato di Google, specializzato per applicazioni mediche attraverso fine-tuning su dataset clinici validati.",
+      "content2": "La nostra architettura cloud-native garantisce scalabilità, sicurezza e performance, mentre algoritmi di machine learning analizzano pattern sintomatici per fornire valutazioni sempre più precise.",
+      "content3": "Ogni interazione è protetta da crittografia end-to-end e i dati sono processati secondo i più rigorosi standard GDPR europei."
+    },
+    "cta": {
+      "title": "Unisciti alla Rivoluzione della Salute Digitale",
+      "subtitle": "Prova MedAgent oggi stesso e scopri come l'intelligenza artificiale può supportare il tuo benessere in modo sicuro, empatico e scientificamente fondato.",
+      "primary": "Inizia la Tua Prima Valutazione",
+      "secondary": "Esplora la Documentazione"
+    }
+  },
+  "footer": {
+    "brand_description": "Un assistente sanitario AI che ti guida attraverso valutazioni sintomatiche intelligenti, fornendo supporto empatico e orientamento medico responsabile.",
+    "made_with_passion": "Realizzato con passione per la salute digitale",
+    "navigation": "Navigazione",
+    "legal": "Legale",
+    "contact_info": "Informazioni di Contatto",
+    "all_rights_reserved": "Tutti i diritti riservati.",
+    "important_notice": "IMPORTANTE: MEDAGENTbyTREBLA non sostituisce il parere medico professionale."
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "warning": "Attenzione",
+    "info": "Informazione",
+    "close": "Chiudi",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "view": "Visualizza",
+    "download": "Scarica",
+    "upload": "Carica",
+    "search": "Cerca",
+    "filter": "Filtra",
+    "sort": "Ordina",
+    "next": "Successivo",
+    "previous": "Precedente",
+    "first": "Primo",
+    "last": "Ultimo",
+    "page": "Pagina",
+    "of": "di",
+    "showing": "Mostrando",
+    "results": "risultati",
+    "no_results": "Nessun risultato trovato",
+    "select_all": "Seleziona tutto",
+    "clear_all": "Cancella tutto",
+    "powered_by": "Powered by bolt.new"
+  }
+}
