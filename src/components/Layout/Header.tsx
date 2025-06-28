@@ -4,18 +4,18 @@ import { Activity, Menu, X, Globe } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('it');
+  const [currentLanguage, setCurrentLanguage] = useState('en');
   const location = useLocation();
 
   const navigation = [
     { name: 'Home', href: '/', current: location.pathname === '/' },
-    { name: 'Valutazione', href: '/valutazione', current: location.pathname === '/valutazione' },
-    { name: 'Chi Siamo', href: '/about', current: location.pathname === '/about' },
+    { name: 'Assessment', href: '/valutazione', current: location.pathname === '/valutazione' },
+    { name: 'About Us', href: '/about', current: location.pathname === '/about' },
     { name: 'Docs', href: '/docs', current: location.pathname === '/docs' },
   ];
 
   const toggleLanguage = () => {
-    setCurrentLanguage(prev => prev === 'it' ? 'en' : 'it');
+    setCurrentLanguage(prev => prev === 'en' ? 'it' : 'en');
   };
 
   return (
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
               to="/valutazione"
               className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              Inizia Valutazione
+              Start Assessment
             </Link>
           </div>
 
@@ -100,7 +100,7 @@ const Header: React.FC = () => {
                   {item.name}
                 </Link>
               ))}
-              
+
               {/* Mobile Language Switch */}
               <button
                 onClick={toggleLanguage}
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
                 className="mx-4 mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-xl text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Inizia Valutazione
+                Start Assessment
               </Link>
             </div>
           </div>
