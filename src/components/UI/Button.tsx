@@ -1,70 +1,63 @@
 import React from 'react';
-import { DivideIcon as LucideIcon } from 'lucide-react';
+import { UrgencyLevel } from '../../types';
+import { AlertTriangle, CheckCircle, Info, XCircle } from 'lucide-react';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger';
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  loading?: boolean;
-  icon?: LucideIcon;
-  iconPosition?: 'left' | 'right';
-  fullWidth?: boolean;
+interface BadgeProps {
+  children: React.ReactNode;
+  variant?: 'default' | 'success' | 'warning' | 'danger' | UrgencyLevel;
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+  withIcon?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Badge: React.FC<BadgeProps> = ({
   children,
-  variant = 'primary',
+  variant = 'default',
   size = 'md',
-  loading = false,
-  icon: Icon,
-  iconPosition = 'left',
-  fullWidth = false,
   className = '',
-  disabled,
-  ...props
+  withIcon = false
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
-  
-  const variantClasses = {
-    primary: 'bg-gradient-to-r from-blue-600 to-green-600 text-white hover:shadow-lg hover:scale-105 focus:ring-blue-500',
-    secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
-    ghost: 'text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
-    danger: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500'
-  };
+  const baseClasses = 'inline-flex items-center font-medium rounded-full';
 
   const sizeClasses = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-sm',
-    lg: 'px-6 py-3 text-base',
-    xl: 'px-8 py-4 text-lg'
+    sm: 'px-2 py-1 text-xs gap-1',
+    md: 'px-3 py-1 text-sm gap-2',
+    lg: 'px-4 py-2 text-base gap-2.5'
   };
 
-  const widthClass = fullWidth ? 'w-full' : '';
+  const variantClasses = {
+    default: 'bg-gray-100 text-gray-800',
+    success: 'bg-green-100 text-green-800',
+    warning: 'bg-yellow-100 text-yellow-800',
+    danger: 'bg-red-100 text-red-800',
+    low: 'bg-green-100 text-green-800',
+    medium: 'bg-yellow-100 text-yellow-800',
+    high: 'bg-red-100 text-red-800'
+  };
+
+  const variantIcons = {
+    success: <CheckCircle className="w-4 h-4" />,
+    warning: <AlertTriangle className="w-4 h-4" />,
+    danger: <XCircle className="w-4 h-4" />,
+    default: <Info className="w-4 h-4" />,
+    low: <CheckCircle className="w-4 h-4" />,
+    medium: <AlertTriangle className="w-4 h-4" />,
+    high: <XCircle className="w-4 h-4" />
+  };
+
+  const safeVariant = variant in variantClasses ? variant : 'default';
+  const safeSize = size in sizeClasses ? size : 'md';
 
   return (
-    <button
-      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`}
-      disabled={disabled || loading}
-      {...props}
+    <span
+      className={`${baseClasses} ${sizeClasses[safeSize]} ${variantClasses[safeVariant]} ${className}`}
+      role="status"
+      aria-label={`Badge ${safeVariant}`}
     >
-      {loading && (
-        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-      )}
-      
-      {Icon && iconPosition === 'left' && !loading && (
-        <Icon className={`${children ? 'mr-2' : ''} h-5 w-5`} />
-      )}
-      
+      {withIcon && variantIcons[safeVariant]}
       {children}
-      
-      {Icon && iconPosition === 'right' && !loading && (
-        <Icon className={`${children ? 'ml-2' : ''} h-5 w-5`} />
-      )}
-    </button>
+    </span>
   );
 };
 
-export default Button;
+export default Badge;
